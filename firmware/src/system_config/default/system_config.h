@@ -93,6 +93,86 @@ extern "C" {
 #define SYS_CLK_CONFIG_SECONDARY_XTAL       32768ul
    
 /*** Ports System Service Configuration ***/
+#define SYS_PORT_A_ANSEL        0x3F23
+#define SYS_PORT_A_TRIS         0xFFFF
+#define SYS_PORT_A_LAT          0x0000
+#define SYS_PORT_A_ODC          0x0000
+#define SYS_PORT_A_CNPU         0x0000
+#define SYS_PORT_A_CNPD         0x0000
+#define SYS_PORT_A_CNEN         0x0000
+
+#define SYS_PORT_B_ANSEL        0xFFFF
+#define SYS_PORT_B_TRIS         0xFFFF
+#define SYS_PORT_B_LAT          0x0000
+#define SYS_PORT_B_ODC          0x0000
+#define SYS_PORT_B_CNPU         0x0000
+#define SYS_PORT_B_CNPD         0x0000
+#define SYS_PORT_B_CNEN         0x0000
+
+#define SYS_PORT_C_ANSEL        0xFFFF
+#define SYS_PORT_C_TRIS         0xFFFF
+#define SYS_PORT_C_LAT          0x0000
+#define SYS_PORT_C_ODC          0x0000
+#define SYS_PORT_C_CNPU         0x0000
+#define SYS_PORT_C_CNPD         0x0000
+#define SYS_PORT_C_CNEN         0x0000
+
+#define SYS_PORT_D_ANSEL        0xC100
+#define SYS_PORT_D_TRIS         0xFFFF
+#define SYS_PORT_D_LAT          0x0000
+#define SYS_PORT_D_ODC          0x0000
+#define SYS_PORT_D_CNPU         0x0000
+#define SYS_PORT_D_CNPD         0x0000
+#define SYS_PORT_D_CNEN         0x0000
+
+#define SYS_PORT_E_ANSEL        0xFFF0
+#define SYS_PORT_E_TRIS         0xFFFF
+#define SYS_PORT_E_LAT          0x0000
+#define SYS_PORT_E_ODC          0x0000
+#define SYS_PORT_E_CNPU         0x0000
+#define SYS_PORT_E_CNPD         0x0000
+#define SYS_PORT_E_CNEN         0x0000
+
+#define SYS_PORT_F_ANSEL        0xFEC0
+#define SYS_PORT_F_TRIS         0xFFFF
+#define SYS_PORT_F_LAT          0x0000
+#define SYS_PORT_F_ODC          0x0000
+#define SYS_PORT_F_CNPU         0x0000
+#define SYS_PORT_F_CNPD         0x0000
+#define SYS_PORT_F_CNEN         0x0000
+
+#define SYS_PORT_G_ANSEL        0x8DFC
+#define SYS_PORT_G_TRIS         0xFFFF
+#define SYS_PORT_G_LAT          0x0000
+#define SYS_PORT_G_ODC          0x0000
+#define SYS_PORT_G_CNPU         0x0000
+#define SYS_PORT_G_CNPD         0x0000
+#define SYS_PORT_G_CNEN         0x0000
+
+#define SYS_PORT_H_ANSEL        0x0073
+#define SYS_PORT_H_TRIS         0xFFFF
+#define SYS_PORT_H_LAT          0x0000
+#define SYS_PORT_H_ODC          0x0000
+#define SYS_PORT_H_CNPU         0x0000
+#define SYS_PORT_H_CNPD         0x0000
+#define SYS_PORT_H_CNEN         0x0000
+
+#define SYS_PORT_J_ANSEL        0x0B00
+#define SYS_PORT_J_TRIS         0xFFFF
+#define SYS_PORT_J_LAT          0x0000
+#define SYS_PORT_J_ODC          0x0000
+#define SYS_PORT_J_CNPU         0x0000
+#define SYS_PORT_J_CNPD         0x0000
+#define SYS_PORT_J_CNEN         0x0000
+
+#define SYS_PORT_K_ANSEL        0xFF00
+#define SYS_PORT_K_TRIS         0xFFFF
+#define SYS_PORT_K_LAT          0x0000
+#define SYS_PORT_K_ODC          0x0000
+#define SYS_PORT_K_CNPU         0x0000
+#define SYS_PORT_K_CNPD         0x0000
+#define SYS_PORT_K_CNEN         0x0000
+
 
 /*** Interrupt System Service Configuration ***/
 #define SYS_INT                     true
@@ -102,7 +182,27 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+#define DRV_OC_DRIVER_MODE_STATIC 
+/*** Timer Driver Configuration ***/
+#define DRV_TMR_INTERRUPT_MODE             true
+#define DRV_TMR_INSTANCES_NUMBER           1
+#define DRV_TMR_CLIENTS_NUMBER             1
 
+/*** Timer Driver 0 Configuration ***/
+#define DRV_TMR_PERIPHERAL_ID_IDX0          TMR_ID_2
+#define DRV_TMR_INTERRUPT_SOURCE_IDX0       INT_SOURCE_TIMER_2
+#define DRV_TMR_INTERRUPT_VECTOR_IDX0       INT_VECTOR_T2
+#define DRV_TMR_ISR_VECTOR_IDX0             _TIMER_2_VECTOR
+#define DRV_TMR_INTERRUPT_PRIORITY_IDX0     INT_PRIORITY_LEVEL1
+#define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX0 INT_SUBPRIORITY_LEVEL0
+#define DRV_TMR_CLOCK_SOURCE_IDX0           DRV_TMR_CLKSOURCE_INTERNAL
+#define DRV_TMR_PRESCALE_IDX0               TMR_PRESCALE_VALUE_256
+#define DRV_TMR_OPERATION_MODE_IDX0         DRV_TMR_OPERATION_MODE_16_BIT
+#define DRV_TMR_ASYNC_WRITE_ENABLE_IDX0     false
+#define DRV_TMR_POWER_STATE_IDX0            SYS_MODULE_POWER_RUN_FULL
+
+
+ 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Middleware & Other Library Configuration

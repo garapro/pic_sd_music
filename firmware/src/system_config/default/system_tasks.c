@@ -78,7 +78,7 @@ void SYS_Tasks ( void )
     /* Maintain Middleware & Other Libraries */
 
     /* Maintain the application's state machine. */
-    APP_Tasks();
+    SD_MUSIC_Tasks();
 }
 
 

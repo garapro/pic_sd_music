@@ -60,7 +60,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "system/common/sys_common.h"
-#include "app.h"
+#include "sd_music.h"
 #include "system_definitions.h"
 
 // *****************************************************************************
@@ -70,6 +70,16 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
  
+
+void __ISR(_TIMER_2_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance0(void)
+{
+    DRV_TMR_Tasks(sysObj.drvTmr0);
+}
+ 
+void __ISR(_OUTPUT_COMPARE_2_VECTOR, ipl1AUTO) _IntHandlerDrvOCInstance0(void)
+{
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_OUTPUT_COMPARE_2);
+}
 /*******************************************************************************
  End of File
 */
